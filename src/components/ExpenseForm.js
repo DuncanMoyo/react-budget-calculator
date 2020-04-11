@@ -4,7 +4,7 @@ import { MdSend } from "react-icons/md";
 const ExpenseForm = () => {
   return (
     <form>
-      <div class="form-center">
+      <div className="form-center">
         <div className="form-group">
           <label htmlFor="charge">charge</label>
           <input
