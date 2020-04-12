@@ -23,17 +23,17 @@ function App() {
   const [amount, setAmount] = useState("");
   // ************************** functionality ********************************
 
-  const handleCharge = (e) => {
+  const handleCharge = e => {
     console.log(`charge: ${e.target.value}`);
     setCharge(e.target.value);
   };
 
-  const handleAmount = (e) => {
+  const handleAmount = e => {
     console.log(`amount: ${e.target.value}`);
-    setCharge(e.target.value);
+    setAmount(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
   };
 
