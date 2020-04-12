@@ -58,6 +58,25 @@ function App() {
     }
   };
 
+  // clear all items
+  const clearItems = () => {
+    setExpenses([]);
+    handleAlert({type: 'danger', text: 'all items deleted'})
+  };
+
+  // delete item
+  const handleDelete = (id) => {
+    let tempExpenses = expenses.filter(item => item.id !== id);
+    console.log(tempExpenses);
+    setExpenses(tempExpenses)
+    handleAlert({type: 'danger', text: 'item deleted'})
+  };
+
+  // edt an item item
+  const handleEdit = (id) => {
+    console.log(`Item edited ${id}`);
+  };
+
   return (
     <>
       {alert.show && <Alert type={alert.type} text={alert.text} />}
@@ -71,7 +90,12 @@ function App() {
           handleCharge={handleCharge}
           handleSubmit={handleSubmit}
         />
-        <ExpenseList expenses={expenses} />
+        <ExpenseList
+          expenses={expenses}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+          clearItems={clearItems}
+        />
       </main>
       <h1>
         Total Spending:{" "}
