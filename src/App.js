@@ -25,11 +25,13 @@ function App() {
 
   // single amount
   const [amount, setAmount] = useState("");
+  
   //alert
   const [alert, setAlert] = useState({ show: false });
 
   // edit
   const [edit, setEdit] = useState(false);
+  
   // edit item
   const [id, setId] = useState(0);
   
@@ -58,7 +60,7 @@ function App() {
   const handleSubmit = (e) => {
     console.log(amount, charge);
     e.preventDefault();
-    if (charge != "" && amount > 0) {
+    if (charge !== "" && amount > 0) {
       if (edit) {
         let tempExpenses = expenses.map((item) => {
           return item.id === id ? { ...item, charge, amount } : item;
@@ -108,6 +110,7 @@ function App() {
     setId(id);
   };
 
+  
   return (
     <>
       {alert.show && <Alert type={alert.type} text={alert.text} />}
